@@ -92,8 +92,8 @@ class PropagateSetAttr(type):
 
 
 def make_propagator(cls, setattr_observers):
-    SkippableTest = PropagateSetAttr('SkippableTest', (unittest.TestCase,),
-                                     {})
+    SkippableTest = PropagateSetAttr('SkippableTest',
+                                     (ParametrizedTestCase,), {})
     SkippableTest.setattr_observers.extend(setattr_observers)
     return SkippableTest
 
